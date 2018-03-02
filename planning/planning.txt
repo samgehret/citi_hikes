@@ -1,0 +1,24 @@
+CITI HIKES
+
+CitiHikes is an application in which users can post hiking trips that they've taken from a major city (DC to start). The users will be residents of large cities who want to take a hiking day trip. They will be able to search hikes by how far away they are, how long a hike, difficulty, cost...etc. Users will also be able to comment on other hikes which are submitted.
+
+
+MVP:
+* List All HIKES
+* Show one hike
+* Edit Hike
+* User Model / authentication
+* Delete users
+
+Bronze:
+* User profile page, can view their own posted hikes
+* Ability to "Like" Hikes
+* Comment on hikes
+* Sort hikes based on number of likes
+
+Silver:
+* Search for hikes based on certain criteria (disance, difficulty..etc)
+* Verify Email workflow
+
+Gold:
+* Implement a mapping feature to visualize where maps are.
