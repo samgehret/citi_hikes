@@ -1,0 +1,23 @@
+[
+    {
+        "hikeTitle": "Old Rag",
+        "datePosted": "Feb 5 2018",
+        "author": "Sam Gehret",
+        "drivingDistance": "2 hours",
+        "hikeDuration": "7 hours",
+        "hikeDifficulty": 7,
+        "hikeContent": "Some hike content will be posted here"
+        
+    },
+    {
+        "hikeTitle": "Billy Goat Trail",
+        "datePosted": "Feb 7 2018",
+        "author": "Sam Gehret",
+        "drivingDistance": "15 minutes",
+        "hikeDuration": "1-3 hours",
+        "hikeDifficulty": 2,
+        "hikeContent": "Some hike content will be posted here"
+        
+    }
+
+]

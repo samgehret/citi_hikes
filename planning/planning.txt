@@ -4,7 +4,7 @@ CitiHikes is an application in which users can post hiking trips that they've ta
 
 
 MVP:
-* List All HIKES
+* List All hikes
 * Show one hike
 * Edit Hike
 * User Model / authentication
@@ -12,13 +12,15 @@ MVP:
 
 Bronze:
 * User profile page, can view their own posted hikes
+* Only Admin can delete users / edit hikes
 * Ability to "Like" Hikes
 * Comment on hikes
 * Sort hikes based on number of likes
+* Try to use this API: https://market.mashape.com/trailapi/trailapi
 
 Silver:
 * Search for hikes based on certain criteria (disance, difficulty..etc)
 * Verify Email workflow
 
 Gold:
-* Implement a mapping feature to visualize where maps are.
+* Implement a mapping feature to visualize where hikes are.

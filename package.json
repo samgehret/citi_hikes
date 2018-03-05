@@ -1,0 +1,26 @@
+{
+  "name": "citi_hikes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samgehret/citi_hikes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samgehret/citi_hikes/issues"
+  },
+  "homepage": "https://github.com/samgehret/citi_hikes#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "mongoose": "^5.0.8"
+  }
+}
