@@ -1,1 +1,9 @@
 <h1>List Hikes</h1>
+
+<ul>
+    {{#each hikes}}
+    <li>
+        <a href = '/hikes/{{this.id}}'>{{this.hikeTitle}}</a>
+    </li>
+    {{/each}}
+</ul>

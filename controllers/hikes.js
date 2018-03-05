@@ -11,4 +11,11 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+  Hike.findOne({_id: req.params.id})
+        .then(hike => {
+          res.render('hikes/show', {hike})
+        })
+})
+
 module.exports = router

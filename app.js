@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express()
 const hbs = require('hbs')
+const bodyParser = require('body-parser')
 const hikesController = require('./controllers/hikes')
 const Hike = require('./models/Hikes')
 
-
+app.use(bodyParser())
+app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
