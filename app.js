@@ -21,7 +21,10 @@ app.set('view engine', 'hbs')
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-  res.send('hello world')
+  Hike.find({})
+  .then(hikes => {
+    res.render('hikes/list', {hikes})
+  })
 })
 
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
