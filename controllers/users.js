@@ -22,4 +22,13 @@ router.post('/signup', (req, res) => {
   return signupStrategy(req, res)
 })
 
+router.post('/login', (req, res) => {
+  var loginProperty = passport.authenticate('local-login', {
+    successRedirect: '/hikes',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })
+  return loginProperty(req, res)
+})
+
 module.exports = router

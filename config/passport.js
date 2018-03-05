@@ -37,21 +37,21 @@ module.exports = function (passport) {
      })
    }))
 
-//   passport.use('local-login', new LocalStrategy({
-//     usernameField: 'email',
-//     passwordField: 'password',
-//     passReqToCallback: true
-//   }, function (req, email, password, callback) {
-//     User.findOne({'local.email': email}, function (err, user) {
-//       if (err) return callback(err)
+  passport.use('local-login', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, function (req, email, password, callback) {
+    User.findOne({'local.email': email}, function (err, user) {
+      if (err) return callback(err)
 
-//       if (!user) {
-//         return callback(null, false, req.flash('loginMessage', 'No user found'))
-//       }
-//       if (!user.validPassword(password)) {
-//         return callback(null, false, req.flash('loginMessage', 'Ooops, wrong password'))
-//       }
-//       return callback(null, user)
-//     })
-//   }))
+      if (!user) {
+        return callback(null, false, req.flash('loginMessage', 'No user found'))
+      }
+      if (!user.validPassword(password)) {
+        return callback(null, false, req.flash('loginMessage', 'Ooops, wrong password'))
+      }
+      return callback(null, user)
+    })
+  }))
 }
