@@ -4,6 +4,7 @@ const router = express.Router()
 const Hike = require('../models/Hikes')
 
 router.get('/', (req, res) => {
+  // console.log(currentUser.local.email)
   Hike.find({})
         .then(hikes => {
           res.render('hikes/list', { hikes })
