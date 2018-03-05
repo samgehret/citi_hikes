@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
         .then(hike => {
           var sortedComments = hike.hikeComments
           sortedComments.sort(function (a, b) {
-            return b.dateComment - a.dateComm ent
+            return b.dateComment - a.dateComment
           })
           res.render('hikes/show', { hike, sortedComments })
         })

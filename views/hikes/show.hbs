@@ -1,15 +1,12 @@
 
 <h1>{{hike.hikeTitle}}</h1>
 
+
 <a href = "/hikes/edit/{{hike.id}}">edit</a>
 
 <ul>
     <li>
         <p>Date Posted: {{hike.datePosted}}</p>
-    </li>
-
-    <li>
-        <p>Author: {{hike.author}}</p>
     </li>
     <li>
         <p>Driving Distance: {{hike.drivingDistance}}</p>
@@ -42,10 +39,12 @@
     {{/each}}
 </ul>
 
+{{#if currentUser}}
 <form action = "/hikes/{{hike.id}}" method = "POST">
 <p>
     <label for="hikeComment">Comment</label>
     <input type="text" name = "hikeComment">
 </p>
 <input type = "submit" value = "Create">
+{{/if}}
 
