@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
   Hike.create({
     hikeTitle: req.body.hikeTitle,
     datePosted: Date.now(),
-    author: req.body.author,
+    author: req.user.local.email,
     drivingDistance: req.body.drivingDistance,
     hikeDuration: req.body.hikeDuration,
     hikeDifficulty: req.body.hikeDifficulty,

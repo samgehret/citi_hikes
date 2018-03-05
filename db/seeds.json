@@ -6,7 +6,19 @@
         "drivingDistance": "2 hours",
         "hikeDuration": "7 hours",
         "hikeDifficulty": 7,
-        "hikeContent": "Some hike content will be posted here"
+        "hikeContent": "Some hike content will be posted here",
+        "hikeComments": [
+            {
+                "commentText": "Comment 1",
+                "commentor": "Sam G",
+                "dateComment": "March 1 2018"
+            },
+            {
+                "commentText": "Comment 2",
+                "commentor": "Tom G",
+                "dateComment": "March 2 2018"
+            }
+        ]
         
     },
     {

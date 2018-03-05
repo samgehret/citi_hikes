@@ -24,3 +24,20 @@
         <p>Hike Content: {{hike.hikeContent}}</p>
     </li>
 </ul>
+
+<h2>Comments Below</h2>
+<ul>
+    {{#each hike.hikeComments}}
+    <li>
+     {{this.commentText}}
+        <ul>
+            <li>
+            {{this.commentor}}
+            </li>
+            <li>
+            {{this.dateComment}}
+            </li>
+        </ul>
+    </li>
+    {{/each}}
+</ul>

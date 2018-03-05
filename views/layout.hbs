@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type = "text/css" href="../style.css">
+    <link rel="stylesheet" type = "text/css" href="../../style.css">
     <title>Citi Hikes</title>
 </head>
 <body>
-    {{#if currentUser}}
-        <li><a href="/users/logout">Logout {{currentUser.local.email}}</a></li>
-    {{/if}}
+       <li><a href="/hikes">All Hikes</a></li>
+            {{#if currentUser}}
+              <li><a href="/users/logout">Logout {{currentUser.local.email}}</a></li>
+            {{else}}
+              <li><a href="/users/login">Login</a></li>
+              <li><a href="/users/signup">Signup</a></li>
+            {{/if}}
+          </ul>
     <p>hello: {{currentUser.local.email}}</p>
     <h1>Nav Bar Will Go Here</h1>
     {{{body}}}
