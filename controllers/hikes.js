@@ -45,10 +45,27 @@ router.put('/:id', (req, res) => {
         })
 })
 
+router.post('/:id', (req, res) => {
+  Hike.findOne({_id: req.params.id})
+    .then(hike => {
+      hike.hikeComments.push({
+        commentText: req.body.hikeComment,
+        commentor: req.user.local.email,
+        dateComment: Date.now()
+      })
+      hike.save()
+      res.redirect('/hikes/' + req.params.id)
+    })
+})
+
 router.get('/:id', (req, res) => {
   Hike.findOne({ _id: req.params.id })
         .then(hike => {
-          res.render('hikes/show', { hike })
+          var sortedComments = hike.hikeComments
+          sortedComments.sort(function (a, b) {
+            return b.dateComment - a.dateComm ent
+          })
+          res.render('hikes/show', { hike, sortedComments })
         })
 })
 

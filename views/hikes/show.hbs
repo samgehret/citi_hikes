@@ -41,3 +41,11 @@
     </li>
     {{/each}}
 </ul>
+
+<form action = "/hikes/{{hike.id}}" method = "POST">
+<p>
+    <label for="hikeComment">Comment</label>
+    <input type="text" name = "hikeComment">
+</p>
+<input type = "submit" value = "Create">
+
