@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const hbs = require('hbs')
+var path = require('path')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const hikesController = require('./controllers/hikes')
@@ -10,13 +11,12 @@ app.use(bodyParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.set('view engine', 'hbs')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('helo world')
+  res.send('hello world')
 })
-
-console.log('this is in app.js')
 
 app.use('/hikes', hikesController)
 
