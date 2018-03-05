@@ -10,6 +10,7 @@ app.use(bodyParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.set('view engine', 'hbs')
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.send('helo world')
