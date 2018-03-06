@@ -20,7 +20,8 @@ router.post('/', (req, res) => {
     drivingDistance: req.body.drivingDistance,
     hikeDuration: req.body.hikeDuration,
     hikeDifficulty: req.body.hikeDifficulty,
-    hikeSummary: req.body.hikeSummary
+    hikeSummary: req.body.hikeSummary,
+    hikeDetail: req.body.hikeDetail
   })
     .then(hike => {
       res.redirect('/hikes')
