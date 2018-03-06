@@ -9,10 +9,11 @@ body {
 
 .displayhike {
     display: flex;
-    
+    flex-wrap: wrap;
+    justify-content: center;
     /* border: red solid 2px; */
-    margin-right: 10%;
-    margin-left: 10%;
+    /* margin-right: 10%;
+    margin-left: 10%; */
     padding: 15px;
 }
 
@@ -24,6 +25,14 @@ body {
     padding: 0 40px 0 40px;
 }
 
+.hikecontent {
+    max-width: 500px;
+}
+
+.hiketop {
+    width: 100%;
+}
+
 .hikebottom {
     /* border: orange solid 2px; */
 }
@@ -33,6 +42,7 @@ body {
     padding: 10px;
     width: 30%;
     margin: 10px;
+    min-width: 175px;
 }
 
 .hiketitle{
