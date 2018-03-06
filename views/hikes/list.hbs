@@ -1,10 +1,10 @@
 <h1>List Hikes</h1>
+
 {{#if currentUser}}
-<a class="waves-effect waves-light btn" href = "/hikes/new">Post a new hike</a>
+        <a id = "postbtn" class="waves-effect waves-light btn" href = "/hikes/new">Post a new hike</a>
 {{/if}}
 
 <div class = 'hikecontainer'>
-    <ul>
         {{#each hikes}}
         <a href = '/hikes/{{this.id}}'>
         <div class = 'hikecard'>
@@ -15,5 +15,4 @@
         </div>
         </a>
         {{/each}}
-    </ul>
 </div>

@@ -9,7 +9,8 @@ body {
 
 .hikecontainer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     
 }
@@ -23,8 +24,8 @@ body {
 .hikecard {
     background-color: whitesmoke;
     height: 100px;
-    width: 500px;
-    margin-bottom: 20px;
+    width: 300px;
+    margin: 30px;
 }
 
 .commentscontainer {
@@ -35,4 +36,8 @@ body {
 .comment {
     border-bottom: solid black 1px;
     padding-bottom: 20px;
+}
+
+#postbtn {
+    margin-left: 100px;
 }

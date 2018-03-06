@@ -1,27 +1,29 @@
 <h1>Edit Hike</h1>
 
-<form action = "/hikes/{{id}}?_method=put" method = "POST">
-<p>
-    <label for = "hikeTitle">Hike Title</label>
-    <input type = "text" value="{{hikeTitle}}" name = "hikeTitle">
-</p>
+<div class = "userforms">
+    <form action = "/hikes/{{id}}?_method=put" method = "POST">
+        <p>
+            <label for = "hikeTitle">Hike Title</label>
+            <input type = "text" value="{{hikeTitle}}" name = "hikeTitle" required>
+        </p>
 
-<p>
-    <label for = "drivingDistance">Driving Distance</label>
-    <input type = "text" value = "{{drivingDistance}}"  name = "drivingDistance">
-</p>
+        <p>
+            <label for = "drivingDistance">Driving Distance</label>
+            <input type = "text" value = "{{drivingDistance}}"  name = "drivingDistance" required>
+        </p>
 
-<p>
-    <label for = "hikeDifficulty">Difficulty<label>
-    <input type = "number" value = "{{hikeDifficulty}}"  name = "hikeDifficulty">
-</p>
-<p>
-    <label for = "hikeDuration">Duration<label>
-    <input type = "string" value = "{{hikeDuration}}"  name = "hikeDuration">
-</p>
-<p>
-    <label for = "hikeSummary">Hike Content</label>
-    <input type = "text" value = "{{hikeSummary}}"  name = "hikeSummary">
-</p>
-<input type = "submit" value = "Update">
-</form>
+        <p>
+            <label for = "hikeDifficulty">Difficulty<label>
+            <input type = "number" value = "{{hikeDifficulty}}"  name = "hikeDifficulty" required>
+        </p>
+        <p>
+            <label for = "hikeDuration">Duration<label>
+            <input type = "text" value = "{{hikeDuration}}"  name = "hikeDuration" required>
+        </p>
+        <p>
+            <label for = "hikeSummary">Hike Content</label>
+            <input type = "text" value = "{{hikeSummary}}"  name = "hikeSummary" required>
+        </p>
+        <input type = "submit" value = "Update">
+    </form>
+</div>

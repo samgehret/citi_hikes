@@ -3,7 +3,6 @@
 <h2>{{user.local.email}}'s PostedHikes</h2>
 
 <div class = 'hikecontainer'>
-    <ul>
         {{#each hikes}}
         <a href = '/hikes/{{this.id}}'>
         <div class = 'hikecard'>
@@ -14,5 +13,4 @@
         </div>
         </a>
         {{/each}}
-    </ul>
 </div>
