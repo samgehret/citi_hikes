@@ -1,34 +1,37 @@
-
-<div class = 'center-align'>
 <h1>{{hike.hikeTitle}}</h1>
-
-
 <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
 
-<ul>
-    <li>
-        <p>Date Posted: {{hike.datePosted}}</p>
-    </li>
+<div class = 'displayhike'>
+    <div class = 'hikesummary'>
+        <ul>
+            <li>
+                <p>Date Posted: {{hike.datePosted}}</p>
+            </li>
 
-    <li>
-        <p>Author: {{hike.author}}</p>
-    </li>
-    <li>
-        <p>Author: {{hike.authorID}}</p>
-    </li>
-    <li>
-        <p>Driving Distance: {{hike.drivingDistance}}</p>
-    </li>
-    <li>
-        <p>Hike Duration: {{hike.hikeDuration}}</p>
-    </li>
-    <li>
-        <p>Hike Difficulty: {{hike.hikeDifficulty}}</p>
-    </li>
-    <li>
-        <p>Hike Content: {{hike.hikeSummary}}</p>
-    </li>
-</ul>
+            <li>
+                <p>Author: {{hike.author}}</p>
+            </li>
+            <li>
+                <p>Author: {{hike.authorID}}</p>
+            </li>
+            <li>
+                <p>Driving Distance: {{hike.drivingDistance}}</p>
+            </li>
+            <li>
+                <p>Hike Duration: {{hike.hikeDuration}}</p>
+            </li>
+            <li>
+                <p>Hike Difficulty: {{hike.hikeDifficulty}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class = 'hikecontent'>
+        <ul>
+            <li>
+                <p>Hike Content: {{hike.hikeSummary}}</p>
+            </li>
+        </ul>
+    </div>
 </div>
 
 {{#if currentUser}}
@@ -38,7 +41,7 @@
     <label for="hikeComment">Comment</label>
     <input type="text" name = "hikeComment" required>
 </p>
-<input class="waves-effect waves-light btn" type = "submit" value = "Add Comment">
+<input class="waves-effect waves-light btn" type = "submit" value = "Add Comment" required>
 </form>
 </div> 
 {{/if}}

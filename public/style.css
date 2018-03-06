@@ -7,6 +7,29 @@ body {
    margin: auto;
 }
 
+.displayhike {
+    display: flex;
+    
+    border: red solid 2px;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 15px;
+}
+
+.hikesummary {
+    border: solid black 2px;
+    padding: 10px;
+    width: 50%;
+    margin: 10px;
+}
+
+.hikecontent {
+    border: solid black 2px;
+    padding: 10px;
+    width: 50%;
+    margin: 10px;
+}
+
 .hikecontainer {
     display: flex;
     flex-wrap: wrap;
