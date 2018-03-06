@@ -5,11 +5,14 @@
 <div class = 'hikecontainer'>
     <ul>
         {{#each hikes}}
+        <a href = '/hikes/{{this.id}}'>
         <div class = 'hikecard'>
-            <li>
+            {{!-- <li>
                 <a href = '/hikes/{{this.id}}'>{{this.hikeTitle}}</a>
-            </li>
+            </li> --}}
+            <p>{{this.hikeTitle}}</p>
         </div>
+        </a>
         {{/each}}
     </ul>
 </div>

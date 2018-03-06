@@ -31,29 +31,29 @@
 </ul>
 </div>
 
-<h2>Comments Below</h2>
-<ul>
-    {{#each hike.hikeComments}}
-    <li>
-     {{this.commentText}}
-        <ul>
-            <li>
-            {{this.commentor}}
-            </li>
-            <li>
-            {{this.dateComment}}
-            </li>
-        </ul>
-    </li>
-    {{/each}}
-</ul>
-
 {{#if currentUser}}
+<div class = 'userforms'>
 <form action = "/hikes/{{hike.id}}" method = "POST">
 <p>
     <label for="hikeComment">Comment</label>
     <input type="text" name = "hikeComment">
 </p>
 <input class="waves-effect waves-light btn" type = "submit" value = "Add Comment">
+</form>
+</div> 
 {{/if}}
+
+<div class = "commentscontainer">
+    <h3>Comments</h3>
+    <ul>
+        {{#each hike.hikeComments}}
+        <div class = 'comment'>
+            <p>Posted by: {{this.commentor}} on {{this.dateComment}}</p>
+            <li>
+            {{this.commentText}}
+            </li>
+        </div>
+        {{/each}}
+    </ul>
+</div>
 

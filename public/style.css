@@ -15,9 +15,24 @@ body {
 }
 
 .hikecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hikecard {
     background-color: whitesmoke;
     height: 100px;
     width: 500px;
     margin-bottom: 20px;
 }
 
+.commentscontainer {
+    margin-left: 10%;
+    margin-right: 40%;
+}
+
+.comment {
+    border-bottom: solid black 1px;
+    padding-bottom: 20px;
+}
