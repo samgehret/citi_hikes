@@ -1,3 +1,23 @@
 body {
-    background: pink;
+    background: white;
 }
+
+.userforms {
+   max-width: 75%;
+   margin: auto;
+}
+
+.hikecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.hikecard {
+    background-color: whitesmoke;
+    height: 100px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+

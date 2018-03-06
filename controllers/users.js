@@ -4,8 +4,11 @@ var bodyParser = require('body-parser')
 // var methodOverride = require('method-override')
 var passport = require('passport')
 
+const User = require('../models/Users')
+const Hike = require('../models/Hikes')
+
 router.get('/login', (req, res) => {
-  res.render('users/login')
+  res.render('users/login', { message: req.flash('loginMessage') })
 })
 
 router.get('/signup', (req, res) => {
@@ -34,6 +37,17 @@ router.post('/login', (req, res) => {
 router.get('/logout', (req, res) => {
   req.logout()
   res.redirect('/hikes')
+})
+
+router.get('/:id', (req, res) => {
+  User.findOne({_id: req.params.id})
+    .then(user => {
+      Hike.find({authorID: req.params.id})
+        .then(hikes => {
+          console.log(hikes)
+          res.render('users/profile', {user, hikes})
+        })
+    })
 })
 
 module.exports = router

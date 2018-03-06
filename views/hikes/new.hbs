@@ -1,27 +1,29 @@
 <h1>Post a new hike!</h1>
 
-<form action = "/hikes" method = "POST">
-<p>
-    <label for = "hikeTitle">Hike Title</label>
-    <input type = "text" name = "hikeTitle">
-</p>
+<div class = 'userforms'>
+    <form action = "/hikes" method = "POST">
+        <p>
+            <label for = "hikeTitle">Hike Title</label>
+            <input type = "text" name = "hikeTitle">
+        </p>
 
-<p>
-    <label for = "drivingDistance">Driving Distance</label>
-    <input type = "text" name = "drivingDistance">
-</p>
+        <p>
+            <label for = "drivingDistance">Driving Distance</label>
+            <input type = "text" name = "drivingDistance">
+        </p>
 
-<p>
-    <label for = "hikeDifficulty">Difficulty<label>
-    <input type = "number" name = "hikeDifficulty">
-</p>
-<p>
-    <label for = "hikeDuration">Duration<label>
-    <input type = "string" name = "hikeDuration">
-</p>
-<p>
-    <label for = "hikeContent">Hike Content</label>
-    <input type = "text" name = "hikeContent">
-</p>
-<input type = "submit" value = "Create">
-</form>
+        <p>
+            <label for = "hikeDifficulty">Difficulty<label>
+            <input type = "number" name = "hikeDifficulty">
+        </p>
+        <p>
+            <label for = "hikeDuration">Duration<label>
+            <input type = "text" name = "hikeDuration">
+        </p>
+        <p>
+            <label for = "hikeSummary">Hike Summary</label>
+            <input type = "text" name = "hikeSummary">
+        </p>
+        <input class="waves-effect waves-light btn"  type = "submit" value = "Add Hike">
+    </form>
+</div>

@@ -16,10 +16,11 @@ router.post('/', (req, res) => {
     hikeTitle: req.body.hikeTitle,
     datePosted: Date.now(),
     author: req.user.local.email,
+    authorID: req.user.id,
     drivingDistance: req.body.drivingDistance,
     hikeDuration: req.body.hikeDuration,
     hikeDifficulty: req.body.hikeDifficulty,
-    hikeContent: req.body.hikeContent
+    hikeSummary: req.body.hikeSummary
   })
     .then(hike => {
       res.redirect('/hikes')
@@ -41,7 +42,7 @@ router.put('/:id', (req, res) => {
   console.log('POSTING TO EDITING HIKE!!!!!')
   Hike.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
         .then(hike => {
-          res.redirect('/hikes')
+          res.redirect('/hikes/' + req.params.id)
         })
 })
 

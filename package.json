@@ -25,6 +25,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "hbs": "^4.0.1",
+    "materialize-css": "^0.100.2",
     "method-override": "^2.3.10",
     "mongoose": "^5.0.8",
     "passport": "^0.4.0",

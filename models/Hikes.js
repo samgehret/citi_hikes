@@ -10,10 +10,12 @@ const HikesSchema = new mongoose.Schema({
   hikeTitle: String,
   datePosted: Date,
   author: String,
+  authorID: String,
   drivingDistance: String,
   hikeDuration: String,
   hikeDifficulty: Number,
-  hikeContent: String,
+  hikeSummary: String,
+  hikeDetail: String,
   hikeComments: [CommentsSchema]
 })
 const Hike = mongoose.model('Hike', HikesSchema)
