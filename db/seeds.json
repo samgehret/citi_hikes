@@ -3,11 +3,12 @@
         "hikeTitle": "Old Rag",
         "datePosted": "Feb 5 2018",
         "author": "Sam Gehret",
+        "authorID": "testID",
         "drivingDistance": "2-3 hours",
         "hikeDuration": "7 hours, 10 miles",
         "hikeDifficulty": 7,
-        "hikeSummary": "Some summary content will be posted here",
-        "hikeDetail": "This is for detailed content",
+        "hikeSummary": "Old Rag Mountain is a 3,284 feet (1,001 m) mountain near Sperryville in Madison County, Virginia. A part of the Blue Ridge Mountains, the peak is located within Shenandoah National Park and is the most popular hiking destination within the park",
+        "hikeDetail": "Abraham Lincoln (February 12, 1809 – April 15, 1865) was an American statesman and lawyer who served as the 16th President of the United States from March 1861 until his assassination in April 1865. Lincoln led the United States through its Civil War—its bloodiest war and perhaps its greatest moral, constitutional, and political crisis.[2][3] In doing so, he preserved the Union, paved the way for the abolition of slavery, strengthened the federal government, and modernized the economy. Born in Hodgenville, Kentucky, Lincoln grew up on the western frontier in Kentucky and Indiana. Largely self-educated, he became a lawyer in Illinois, a Whig Party leader, and was elected to the Illinois House of Representatives, in which he served for eight years. Elected to the United States House of Representatives in 1846, Lincoln promoted rapid modernization of the economy and opposed the Mexican–American War. After a single term, he returned to Illinois and resumed his successful law practice. Reentering politics in 1854, he became a leader in building the new Republican Party, which had a statewide majority in Illinois. As part of the 1858 campaign for US Senator from Illinois, Lincoln took part in a series of highly publicized debates with his opponent and rival, Democrat Stephen A. Douglas; Lincoln spoke out against the expansion of slavery, but lost the race to Douglas. In 1860, Lincoln secured the Republican Party presidential nomination as a moderate from a swing state, though most delegates originally favored other candidates. Though he gained very little support in the slaveholding states of the South, he swept the North and was elected president in 1860.",
         "hikeComments": [
             {
                 "commentText": "Comment 1",
@@ -26,12 +27,12 @@
         "hikeTitle": "Billy Goat Trail",
         "datePosted": "Feb 7 2018",
         "author": "Sam Gehret",
+        "authorID": "testID",
         "drivingDistance": "15 minutes",
         "hikeDuration": "1-3 hours",
         "hikeDifficulty": 2,
-        "hikeSummary": "Some hike content will be posted here",
-        "hikeDetail": "Detailed content here"
-        
+        "hikeSummary": "The Billy Goat Trail is a 4.7-mile (7.6 km) hiking trail that follows a path between the C&O Canal and the Potomac River within the Chesapeake and Ohio Canal National Historical Park near Great Falls in Montgomery County, Maryland. The trail has three sections: Section A, the northernmost, is 1.7 miles (2.7 km); Section B is 1.4 miles (2.3 km); and Section C, the southernmost, is 1.6 miles (2.6 km)",
+        "hikeDetail": "Billy Goat Trail was laid out by the YMCA Triangle Club in 1919.[1] Section A of the trail, by far the most popular, is on Bear Island and traverses rough and rocky terrain, including a steep climb along a cliff face along the Potomac River's Mather Gorge. At another point in the trail, hikers are required to scramble over and around huge boulders. Sections B and C are less strenuous; section B requires only one brief scramble, and section C has none. Most of the trail is well marked with light blue trail blazes. Section A is best accessed from the Great Falls Tavern Visitor Center. Section B and Section C are best accessed from Carderock, Maryland. All sections of the trail are free, although an entrance fee ($10 per car - 2015) is charged when entering and parking near the Great Falls Tavern Visitor Center. No fee is charged when parking near Carderock. Dogs are not allowed on Section A, nor on Olmsted Island (Great Falls Overlook), but are permitted on a leash at all times everywhere else in the park. It takes about 2 1/2 hours to do the Section A loop from the parking lot. The three sections of the trail do not connect directly with each other, but are connected to each other by the towpath along the C&O Canal. The end point of section C is about 2.75 miles (4.4 km) southeast along the towpath from the starting point of section A."
     }
 
 ]

@@ -62,11 +62,23 @@ router.post('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
   Hike.findOne({ _id: req.params.id })
         .then(hike => {
+          var isMyHike = false
+          if (req.user) {
+            if (req.user.id === hike.authorID) {
+              isMyHike = true
+            }
+          }
+          console.log(isMyHike)
+          // if (hike.authorID === req.user.id) {
+          //   console.log('this is my hike')
+          // }
+          // console.log(hike.authorID)
+          // console.log(req.user.id)
           var sortedComments = hike.hikeComments
           sortedComments.sort(function (a, b) {
             return b.dateComment - a.dateComment
           })
-          res.render('hikes/show', { hike, sortedComments })
+          res.render('hikes/show', { hike, sortedComments, isMyHike })
         })
 })
 

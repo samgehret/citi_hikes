@@ -1,36 +1,40 @@
-<h1>{{hike.hikeTitle}}</h1>
-<a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
+<div class = 'hiketitle'>
+    <h3>{{hike.hikeTitle}}</h3>
+    {{#if isMyHike}}
+    <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
+    {{/if}}
+</div>
+<div class = 'hikebox'>
+    <div class = 'hiketop'>
+        <div class = 'displayhike'>
+            <div class = 'hikesummary'>
+                {{!-- <p>High Level</p> --}}
+                <ul>
+                    {{!-- <li>
+                        <p>Posted: {{hike.datePosted}}</p>
+                    </li> --}}
 
-<div class = 'displayhike'>
-    <div class = 'hikesummary'>
-        <ul>
-            <li>
-                <p>Date Posted: {{hike.datePosted}}</p>
-            </li>
-
-            <li>
-                <p>Author: {{hike.author}}</p>
-            </li>
-            <li>
-                <p>Author: {{hike.authorID}}</p>
-            </li>
-            <li>
-                <p>Driving Distance: {{hike.drivingDistance}}</p>
-            </li>
-            <li>
-                <p>Hike Duration: {{hike.hikeDuration}}</p>
-            </li>
-            <li>
-                <p>Hike Difficulty: {{hike.hikeDifficulty}}</p>
-            </li>
-        </ul>
+                    <li>
+                        <p>By: {{hike.author}}</p>
+                    </li>
+                    <li>
+                        <p>Driving Distance: {{hike.drivingDistance}}</p>
+                    </li>
+                    <li>
+                        <p>Duration: {{hike.hikeDuration}}</p>
+                    </li>
+                    <li>
+                        <p>Difficulty: {{hike.hikeDifficulty}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class = 'hikecontent'>
+                <p>Summary: {{hike.hikeSummary}}</p>
+            </div>
+        </div>
     </div>
-    <div class = 'hikecontent'>
-        <ul>
-            <li>
-                <p>Hike Content: {{hike.hikeSummary}}</p>
-            </li>
-        </ul>
+    <div class = 'hikebottom'>
+        <p>{{hike.hikeDetail}}</p>
     </div>
 </div>
 
@@ -51,7 +55,7 @@
     <ul>
         {{#each hike.hikeComments}}
         <div class = 'comment'>
-            <p>Posted by: {{this.commentor}} on {{this.dateComment}}</p>
+            <p>Posted by: {{this.commentor}}</p>
             <li>
             {{this.commentText}}
             </li>

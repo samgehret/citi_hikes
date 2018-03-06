@@ -10,23 +10,41 @@ body {
 .displayhike {
     display: flex;
     
-    border: red solid 2px;
+    /* border: red solid 2px; */
     margin-right: 10%;
     margin-left: 10%;
     padding: 15px;
 }
 
+.hikebox {
+    /* border: green solid 2px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px 0 40px;
+}
+
+.hikebottom {
+    /* border: orange solid 2px; */
+}
+
 .hikesummary {
     border: solid black 2px;
     padding: 10px;
-    width: 50%;
+    width: 30%;
     margin: 10px;
+}
+
+.hiketitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hikecontent {
     border: solid black 2px;
     padding: 10px;
-    width: 50%;
+    width: 75%;
     margin: 10px;
 }
 
