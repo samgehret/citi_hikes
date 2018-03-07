@@ -1,5 +1,6 @@
 <div class = 'hiketitle'>
-    <h3>{{hike.hikeTitle}}</h3>
+    <h3 class ='title'>{{hike.hikeTitle}}</h3>
+    <p class = 'title'>By: {{hike.author}}</p>
     {{#if isMyHike}}
     <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
     <form action="/hikes/{{hike.id}}?_method=delete" method="POST">
@@ -12,30 +13,23 @@
     <div class = 'hiketop'>
         <div class = 'displayhike'>
             <div class = 'hikesummary'>
-                {{!-- <p>High Level</p> --}}
                 <ul>
-                    {{!-- <li>
-                        <p>Posted: {{hike.datePosted}}</p>
-                    </li> --}}
-
                     <li>
-                        <p>By: {{hike.author}}</p>
+                        <p class = 'center-align stats'>Driving Distance:<br> {{hike.drivingDistance}}</p>
                     </li>
                     <li>
-                        <p>Driving Distance: {{hike.drivingDistance}}</p>
+                        <p class = 'center-align stats'>Duration:<br> {{hike.hikeDuration}}</p>
                     </li>
                     <li>
-                        <p>Duration: {{hike.hikeDuration}}</p>
-                    </li>
-                    <li>
-                        <p>Difficulty: {{hike.hikeDifficulty}}</p>
+                        <p class = 'center-align stats'>Difficulty:<br> {{hike.hikeDifficulty}}</p>
                     </li>
                 </ul>
             </div>
+            <div id="map" style="width:25%;height:300px;min-width:300px"></div>
             <div class = 'hikecontent'>
-                <p>Summary: {{hike.hikeSummary}}</p>
+                <p><strong>Summary:</strong> {{hike.hikeSummary}}</p>
             </div>
-        </div>
+        </div> 
     </div>
     <div class = 'hikebottom'>
         <p>{{hike.hikeDetail}}</p>
@@ -56,10 +50,17 @@
 
 <div class = "commentscontainer">
     <h3>Comments</h3>
+    {{#unless currentUser}}
+    <p>You must be logged in to add a comment</p>
+    {{/unless}}
+    <p></p>
     <ul>
+        {{#unless hike.hikeComments}}
+        <p>There are no comments, add the first!</p>
+        {{/unless}}
         {{#each hike.hikeComments}}
         <div class = 'comment'>
-            <p>Posted by: {{this.commentor}}</p>
+            <p><strong>Posted by: {{this.commentor}}</strong></p>
             <li>
             {{this.commentText}}
             </li>
@@ -67,4 +68,7 @@
         {{/each}}
     </ul>
 </div>
+
+<script type="text/javascript" src="../js/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN4YlG2VqUaQkwAAzBI0sVRQmsFAVoTpM&callback=initMap"></script>
 

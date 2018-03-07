@@ -4,7 +4,6 @@ const router = express.Router()
 const Hike = require('../models/Hikes')
 
 router.get('/', (req, res) => {
-  // console.log(currentUser.local.email)
   Hike.find({})
         .then(hikes => {
           res.render('hikes/list', { hikes })
@@ -45,7 +44,6 @@ router.get('/edit/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  console.log('POSTING TO EDITING HIKE!!!!!')
   Hike.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
         .then(hike => {
           res.redirect('/hikes/' + req.params.id)
@@ -74,12 +72,6 @@ router.get('/:id', (req, res) => {
               isMyHike = true
             }
           }
-          console.log(isMyHike)
-          // if (hike.authorID === req.user.id) {
-          //   console.log('this is my hike')
-          // }
-          // console.log(hike.authorID)
-          // console.log(req.user.id)
           var sortedComments = hike.hikeComments
           sortedComments.sort(function (a, b) {
             return b.dateComment - a.dateComment
