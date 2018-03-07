@@ -66,13 +66,15 @@ body {
     
 }
 
+.listlink{
+    font-size: 30px;
+    color: black;
+}
+
 .hikecard {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.hikecard {
     background-color: whitesmoke;
     height: 100px;
     width: 300px;

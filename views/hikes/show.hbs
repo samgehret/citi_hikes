@@ -2,7 +2,11 @@
     <h3>{{hike.hikeTitle}}</h3>
     {{#if isMyHike}}
     <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
+    <form action="/hikes/{{hike.id}}?_method=delete" method="POST">
+    <input class = 'waves-effect waves-light btn red' type="submit" value="Delete">
     {{/if}}
+    
+</form>
 </div>
 <div class = 'hikebox'>
     <div class = 'hiketop'>
@@ -43,7 +47,7 @@
 <form action = "/hikes/{{hike.id}}" method = "POST">
 <p>
     <label for="hikeComment">Comment</label>
-    <input type="text" name = "hikeComment" required>
+    <textarea name="hikeComment" cols="40" rows="5" required></textarea>
 </p>
 <input class="waves-effect waves-light btn" type = "submit" value = "Add Comment" required>
 </form>

@@ -29,7 +29,12 @@ router.post('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  res.render('hikes/new')
+  console.log(req.user)
+  if (req.user) {
+    res.render('hikes/new')
+  } else {
+    res.redirect('/users/signup')
+  }
 })
 
 router.get('/edit/:id', (req, res) => {
@@ -81,6 +86,13 @@ router.get('/:id', (req, res) => {
           })
           res.render('hikes/show', { hike, sortedComments, isMyHike })
         })
+})
+
+router.delete('/:id', (req, res) => {
+  Hike.findOneAndRemove({_id: req.params.id})
+    .then(() => {
+      res.redirect('/users/' + req.params.id)
+    })
 })
 
 module.exports = router
