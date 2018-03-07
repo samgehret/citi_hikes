@@ -16,10 +16,14 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  User.find({})
+  if (req.user && req.user.isAdmin) {
+    User.find({})
         .then(users => {
           res.render('users/list', {users})
         })
+  } else {
+    res.send('no access')
+  }
 })
 
 // POST Signup
