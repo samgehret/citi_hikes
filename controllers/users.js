@@ -15,6 +15,13 @@ router.get('/signup', (req, res) => {
   res.render('users/signup', { message: req.flash('signupMessage') })
 })
 
+router.get('/', (req, res) => {
+  User.find({})
+        .then(users => {
+          res.render('users/list', {users})
+        })
+})
+
 // POST Signup
 router.post('/signup', (req, res) => {
   var signupStrategy = passport.authenticate('local-signup', {
@@ -44,9 +51,15 @@ router.get('/:id', (req, res) => {
     .then(user => {
       Hike.find({authorID: req.params.id})
         .then(hikes => {
-          console.log(hikes)
           res.render('users/profile', {user, hikes})
         })
+    })
+})
+
+router.delete('/:id', (req, res) => {
+  User.findOneAndRemove({_id: req.params.id})
+    .then(() => {
+      res.redirect('/users')
     })
 })
 

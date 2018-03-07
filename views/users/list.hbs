@@ -1,0 +1,10 @@
+<h3 class = 'center-align'>User List</h3>
+
+{{#each users}}
+<div class = 'userdelete'>
+<a class = 'listlink' href = '/users/{{this.id}}'>{{this.local.email}}</a>
+<form action="/users/{{this.id}}?_method=delete" method="POST">
+<input class = 'waves-effect waves-light btn red' type="submit" value="Delete">
+</form>
+</div>
+{{/each}}

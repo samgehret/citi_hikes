@@ -25,7 +25,7 @@ module.exports = function (passport) {
 
        if (user) {
          console.log('user taken')
-         return callback(null, false, req.flash('signupMessage', 'This email is already used.'))
+         return callback(null, false, req.flash('signupMessage', 'Email already exists'))
        } else {
          var newUser = new User()
          newUser.local.email = email
@@ -48,10 +48,10 @@ module.exports = function (passport) {
       if (err) return callback(err)
 
       if (!user) {
-        return callback(null, false, req.flash('loginMessage', 'No user found'))
+        return callback(null, false, req.flash('loginMessage', 'No user found for this email'))
       }
       if (!user.validPassword(password)) {
-        return callback(null, false, req.flash('loginMessage', 'Ooops, wrong password'))
+        return callback(null, false, req.flash('loginMessage', 'Invaild Password'))
       }
       return callback(null, user)
     })

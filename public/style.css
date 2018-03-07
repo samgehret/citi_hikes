@@ -95,3 +95,10 @@ body {
 #postbtn {
     margin-left: 100px;
 }
+
+.userdelete {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+}
