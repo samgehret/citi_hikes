@@ -27,8 +27,8 @@ router.post('/', (req, res) => {
     })
 })
 
+// Only logged in users can post a hike and access the /new view
 router.get('/new', (req, res) => {
-  console.log(req.user)
   if (req.user) {
     res.render('hikes/new')
   } else {
@@ -43,6 +43,7 @@ router.get('/edit/:id', (req, res) => {
     })
 })
 
+// Edit a hike route
 router.put('/:id', (req, res) => {
   Hike.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
         .then(hike => {
@@ -50,6 +51,8 @@ router.put('/:id', (req, res) => {
         })
 })
 
+// This route is to POST a new comment, which pushes it to a comment array
+// property of a hike.
 router.post('/:id', (req, res) => {
   Hike.findOne({_id: req.params.id})
     .then(hike => {
@@ -63,6 +66,9 @@ router.post('/:id', (req, res) => {
     })
 })
 
+// Only users who posted the hike can edit or delete their own hike
+// isMyHike will be set to true if you are looking at the show page of
+// your own hike.
 router.get('/:id', (req, res) => {
   Hike.findOne({ _id: req.params.id })
         .then(hike => {
@@ -72,6 +78,7 @@ router.get('/:id', (req, res) => {
               isMyHike = true
             }
           }
+          // this sorts the comments by most recent
           var sortedComments = hike.hikeComments
           sortedComments.sort(function (a, b) {
             return b.dateComment - a.dateComment

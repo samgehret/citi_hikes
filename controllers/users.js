@@ -15,6 +15,7 @@ router.get('/signup', (req, res) => {
   res.render('users/signup', { message: req.flash('signupMessage') })
 })
 
+// Only admin users can access the list users page
 router.get('/', (req, res) => {
   if (req.user && req.user.isAdmin) {
     User.find({})
@@ -26,7 +27,6 @@ router.get('/', (req, res) => {
   }
 })
 
-// POST Signup
 router.post('/signup', (req, res) => {
   var signupStrategy = passport.authenticate('local-signup', {
     successRedirect: '/hikes',

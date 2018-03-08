@@ -1,6 +1,7 @@
 var mongoose = require('../db/connection')
 var bcrypt = require('bcrypt-nodejs')
 
+// Created isAdmin property to differentiate admin level users
 var User = mongoose.Schema({
   local: {
     email: String,
@@ -19,7 +20,8 @@ User.methods.validPassword = function (password) {
 
 module.exports = mongoose.model('User', User)
 
-// Seeding for admin user
+// Seeding for admin user, just to run scripts
+
 // db.users.findOneAndUpdate(
 //   {"local.email": "sam_admin"}
 //   {"isAdmin": true}

@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/Users')
 
-console.log('getting to pasport')
+// Used a lot of the code from the GA lesson.
 
 module.exports = function (passport) {
   passport.serializeUser(function (user, callback) {
@@ -31,6 +31,8 @@ module.exports = function (passport) {
          newUser.local.email = email
          newUser.local.password = newUser.encrypt(password)
          newUser.isAdmin = false
+         // by default I set isAdmin to false. User can only become admin
+         // with direct DB access to modify the property manually
 
          newUser.save(function (err) {
            if (err) throw err

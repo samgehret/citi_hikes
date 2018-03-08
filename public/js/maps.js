@@ -19,3 +19,6 @@ function initMap () {
     }
   })
 }
+
+// Used the following Google Maps tutorial:
+// https://developers.google.com/maps/documentation/javascript/directions

@@ -1,6 +1,7 @@
 <div class = 'hiketitle'>
     <h3 id = 'title' class ='title'>{{hike.hikeTitle}}</h3>
     <p class = 'title'>By: {{hike.author}}</p>
+    {{!-- Only if a user posted a hike will they have the ability to edit or delete it --}}
     {{#if isMyHike}}
     <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
     <form action="/hikes/{{hike.id}}?_method=delete" method="POST">
