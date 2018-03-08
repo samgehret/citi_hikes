@@ -13,7 +13,9 @@ Check it out live here: https://citi-hikes.herokuapp.com/hikes
 
 ### Functionality
 * Two models, for hikes and for users.
+* A subdocument for comments is embedded into the hike model.
 * Full CRUD functionaltiy distributed over both models.
 * User profile pages to view their own posted content.
 * Admin level role permissions for users, as well as restricted pages for admin users only.
+* A few other restrictions, such as users can only edit/delete hikes that they have posted. Only logged in users can post hikes or comment on other hikes.
 * Configuration parameters in place for deployment to Heroku, with an MLAB Mongo DB.
