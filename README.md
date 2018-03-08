@@ -19,3 +19,10 @@ Check it out live here: https://citi-hikes.herokuapp.com/hikes
 * Admin level role permissions for users, as well as restricted pages for admin users only.
 * A few other restrictions, such as users can only edit/delete hikes that they have posted. Only logged in users can post hikes or comment on other hikes.
 * Configuration parameters in place for deployment to Heroku, with an MLAB Mongo DB.
+
+## Installation instructions
+* Clone down this repo
+* run "npm install" to include all the dependencies.
+* Ensure that you have a local instance of MongoDB running.
+* Run "node db/seed.js" to seed the DB with some demo hikes.
+* To create an admin user, you must edit a user directly in the DB, by changing the "isAdmin" boolean attribute to true.
