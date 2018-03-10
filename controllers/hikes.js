@@ -6,7 +6,7 @@ const Hike = require('../models/Hikes')
 router.get('/', (req, res) => {
   Hike.find({})
         .then(hikes => {
-          res.render('hikes/list', { hikes })
+          res.render('hikes/list')
         })
 })
 
