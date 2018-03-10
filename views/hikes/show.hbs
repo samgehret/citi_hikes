@@ -1,5 +1,5 @@
 <div class = 'hiketitle'>
-    <h3 id = 'title' class ='title'>{{hike.hikeTitle}}</h3>
+    <h3 id = 'title' class ='title'>{{hikeID}}</h3>
     <p class = 'title'>By: {{hike.author}}</p>
     {{!-- Only if a user posted a hike will they have the ability to edit or delete it --}}
     {{#if isMyHike}}
@@ -29,7 +29,7 @@
             </div>
             <div id="map" style="width:25%;height:300px;min-width:300px"></div>
             <div class = 'hikecontent'>
-                <p><strong>Summary:</strong> {{hike.hikeSummary}}</p>
+                <p id = 'summary'><strong>Summary:</strong></p>
             </div>
         </div> 
     </div>
@@ -71,8 +71,4 @@
     </ul>
 </div>
 
-<script type="text/javascript" src="../js/maps.js"></script>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
-{{!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN4YlG2VqUaQkwAAzBI0sVRQmsFAVoTpM&callback=initMap"></script> --}}
-
+<script type="text/javascript" src="../js/gethike.js"></script>

@@ -15,11 +15,11 @@ function doSomething (response) {
     hikeCard.className = 'hikecard'
     var hikeTitle = document.createElement('p')
     var hikeLink = document.createElement('a')
-    hikeLink.href = 'test'
+    hikeLink.href = `/hikes/${trail.id}`
     hikeTitle.innerHTML = trail.name
     hikeLink.appendChild(hikeCard)
     hikeCard.appendChild(hikeTitle)
-    document.querySelector('.hikecontainer').appendChild(hikeCard)
+    document.querySelector('.hikecontainer').appendChild(hikeLink)
   }
   // document.querySelector('.hiketitle').innerHTML = response.trails[0].name
 }

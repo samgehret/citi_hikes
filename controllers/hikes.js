@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Hike = require('../models/Hikes')
+var hikeID = ''
 
 router.get('/', (req, res) => {
   Hike.find({})
@@ -70,21 +71,24 @@ router.post('/:id', (req, res) => {
 // isMyHike will be set to true if you are looking at the show page of
 // your own hike.
 router.get('/:id', (req, res) => {
-  Hike.findOne({ _id: req.params.id })
-        .then(hike => {
-          var isMyHike = false
-          if (req.user) {
-            if (req.user.id === hike.authorID) {
-              isMyHike = true
-            }
-          }
-          // this sorts the comments by most recent
-          var sortedComments = hike.hikeComments
-          sortedComments.sort(function (a, b) {
-            return b.dateComment - a.dateComment
-          })
-          res.render('hikes/show', { hike, sortedComments, isMyHike })
-        })
+
+  hikeID = req.params.id
+  // Hike.findOne({ _id: req.params.id })
+  //       .then(hike => {
+  //         var isMyHike = false
+  //         if (req.user) {
+  //           if (req.user.id === hike.authorID) {
+  //             isMyHike = true
+  //           }
+  //         }
+  //         // this sorts the comments by most recent
+  //         var sortedComments = hike.hikeComments
+  //         sortedComments.sort(function (a, b) {
+  //           return b.dateComment - a.dateComment
+  //         })
+  //         res.render('hikes/show', { hike, sortedComments, isMyHike })
+  //       })
+  res.render('hikes/show', {hikeID})
 })
 
 router.delete('/:id', (req, res) => {
@@ -95,3 +99,4 @@ router.delete('/:id', (req, res) => {
 })
 
 module.exports = router
+
