@@ -14,7 +14,10 @@ function doSomething (response) {
     var hikeCard = document.createElement('div')
     hikeCard.className = 'hikecard'
     var hikeTitle = document.createElement('p')
+    var hikeLink = document.createElement('a')
+    hikeLink.href = 'test'
     hikeTitle.innerHTML = trail.name
+    hikeLink.appendChild(hikeCard)
     hikeCard.appendChild(hikeTitle)
     document.querySelector('.hikecontainer').appendChild(hikeCard)
   }
