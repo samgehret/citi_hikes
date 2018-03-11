@@ -1,6 +1,5 @@
 <div class = 'hiketitle'>
     <h3 id = 'title' class ='title'>{{hikeID}}</h3>
-    <p class = 'title'>By: {{hike.author}}</p>
     {{!-- Only if a user posted a hike will they have the ability to edit or delete it --}}
     {{#if isMyHike}}
     <a class="waves-effect waves-light btn" href = "/hikes/edit/{{hike.id}}">edit</a>
@@ -11,32 +10,36 @@
     
 
 </div>
-<div class = 'hikebox'>
+
     <div class = 'hiketop'>
         <div class = 'displayhike'>
             <div class = 'hikesummary'>
                 <ul>
-                    <li>
-                        <p class = 'center-align stats'>Driving Distance:<br> {{hike.drivingDistance}}</p>
+                   <li class = 'distance-align list stats'>
+                        <div class = 'distance'></div>&nbsp;mi from DC
                     </li>
-                    <li>
-                        <p class = 'center-align stats'>Duration:<br> {{hike.hikeDuration}}</p>
+                    <li class = 'list stats'>
+                        <div>Hike Length:&nbsp</div><div class = 'length'></div>&nbsp;mi
                     </li>
-                    <li>
-                        <p class = 'center-align stats'>Difficulty:<br> {{hike.hikeDifficulty}}</p>
+                    <li class = 'list stats'>
+                        <div>Ascent:&nbsp</div><div class = 'ascent'></div>&nbsp;ft
                     </li>
+                    <li class = 'list stats'>
+                        <div>Difficulty:&nbsp</div><div class = 'difficulty'></div>
+                    </li>
+                    <li class = 'list stats'>
+                        <div>Status:&nbsp</div><div class = 'status'></div>
+                    </li>
+                    
                 </ul>
             </div>
-            <div id="map" style="width:25%;height:300px;min-width:300px"></div>
-            <div class = 'hikecontent'>
-                <p id = 'summary'><strong>Summary:</strong></p>
-            </div>
-        </div> 
+            <div id="map" style="width:40%;height:300px;min-width:300px"></div>
+        </div>
+        <div class = 'details list stats'>
+            <div class = 'center-align'>Details:&nbsp<div class = 'statusdetails'></div></div>
+        </div>
     </div>
-    <div class = 'hikebottom'>
-        <p>{{hike.hikeDetail}}</p>
-    </div>
-</div>
+
 
 {{#if currentUser}}
 <div class = 'userforms'>
