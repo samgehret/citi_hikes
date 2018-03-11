@@ -75,7 +75,8 @@ function printRoutes (response) {
         },
         'layout': {
           'icon-image': trail.name,
-          'icon-size': 0.15
+          'icon-size': 0.2,
+          'icon-allow-overlap': true
         }
       })
     })

@@ -55,8 +55,10 @@ router.put('/:id', (req, res) => {
 // This route is to POST a new comment, which pushes it to a comment array
 // property of a hike.
 router.post('/:id', (req, res) => {
-  Hike.findOne({_id: req.params.id})
+  console.log('hello')
+  Hike.findOne({'hiker': `${req.params.id}`})
     .then(hike => {
+      console.log(hike)
       hike.hikeComments.push({
         commentText: req.body.hikeComment,
         commentor: req.user.local.email,
@@ -71,24 +73,17 @@ router.post('/:id', (req, res) => {
 // isMyHike will be set to true if you are looking at the show page of
 // your own hike.
 router.get('/:id', (req, res) => {
-
   hikeID = req.params.id
-  // Hike.findOne({ _id: req.params.id })
-  //       .then(hike => {
-  //         var isMyHike = false
-  //         if (req.user) {
-  //           if (req.user.id === hike.authorID) {
-  //             isMyHike = true
-  //           }
-  //         }
-  //         // this sorts the comments by most recent
-  //         var sortedComments = hike.hikeComments
-  //         sortedComments.sort(function (a, b) {
-  //           return b.dateComment - a.dateComment
-  //         })
-  //         res.render('hikes/show', { hike, sortedComments, isMyHike })
-  //       })
-  res.render('hikes/show', {hikeID})
+  Hike.findOne({ 'hiker': `${req.params.id}`})
+        .then(hike => {
+          // this sorts the comments by most recent
+          var sortedComments = hike.hikeComments
+          sortedComments.sort(function (a, b) {
+            return b.dateComment - a.dateComment
+          })
+          res.render('hikes/show', {hikeID, hike})
+        })
+  // res.render('hikes/show', {hikeID, sortedComments})
 })
 
 router.delete('/:id', (req, res) => {
@@ -99,4 +94,3 @@ router.delete('/:id', (req, res) => {
 })
 
 module.exports = router
-
