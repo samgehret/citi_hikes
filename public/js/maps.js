@@ -54,20 +54,48 @@ function printRoutes (response) {
   var allTrails = response.trails
   console.log(allTrails)
   for (let trail of allTrails) {
-    map.addLayer({
-      id: trail.name,
-      type: 'circle',
-      source: {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [trail.longitude, trail.latitude]
+    map.loadImage('../img/hikingicon.png', function (error, image) {
+      if (error) throw error
+      map.addImage(trail.name, image)
+      map.addLayer({
+        'id': trail.name,
+        'type': 'symbol',
+        'source': {
+          'type': 'geojson',
+          'data': {
+            'type': 'FeatureCollection',
+            'features': [{
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [trail.longitude, trail.latitude]
+              }
+            }]
           }
+        },
+        'layout': {
+          'icon-image': trail.name,
+          'icon-size': 0.15
         }
-      }
+      })
     })
+    map.on('click', trail.name, function (e) {
+      var coordinates = e.features[0].geometry.coordinates.slice()
+      var description = e.features[0].properties.description
+
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
+      }
+
+      new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(`<p>${trail.name}</p><p>Length: ${trail.length}</p><p>Ascent: ${trail.ascent} ft</p><p><a href = '/hikes/${trail.id}'>More:</a></p>`)
+          .addTo(map)
+    })
+
               // this is where the code from the next step will go
   }
 }
