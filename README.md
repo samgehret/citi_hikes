@@ -30,5 +30,6 @@ Check it out live here: http://cithikes.com
 * Clone down this repo
 * run "npm install" to include all the dependencies.
 * Ensure that you have a local instance of MongoDB running.
+* Start the node.js server by running nodemon app.js or node app.js
 * Run "node db/seed.js" to seed the DB with some demo hikes.
 * To create an admin user, you must edit a user directly in the DB, by changing the "isAdmin" boolean attribute to true.
