@@ -7,15 +7,8 @@ const CommentsSchema = new mongoose.Schema({
 })
 
 const HikesSchema = new mongoose.Schema({
-  hikeTitle: String,
-  datePosted: Date,
-  author: String,
-  authorID: String,
-  drivingDistance: String,
-  hikeDuration: String,
-  hikeDifficulty: Number,
-  hikeSummary: String,
-  hikeDetail: String,
+  hikeID: String,
+  hikeNum: Number,
   hikeComments: [CommentsSchema]
 })
 const Hike = mongoose.model('Hike', HikesSchema)

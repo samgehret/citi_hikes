@@ -34,16 +34,37 @@ body {
 
 .hiketop {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .hikesummary {
     
     border: solid black 2px;
+    margin-right:5px;
     padding: 10px;
-    width: 30%;
-    margin: 10px;
+    width: 20%;
+    min-width: 215px;
+    max-width: 500px;
+}
+
+#map {
+    border: solid black 2px;
+    margin-left: 5px;
+    width: 40%;
     min-width: 175px;
-    max-width: 300px;
+    max-width: 500px;
+}
+#mapall {
+    border: solid black 2px;
+    margin-left: 5px;
+    width: 75%;
+    height: 500px;
+}
+.listlayout {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hiketitle{
@@ -68,8 +89,9 @@ body {
 }
 
 .listlink{
-    font-size: 30px;
+    font-size: 20px;
     color: black;
+    text-align: center;
 }
 
 .hikecard {
@@ -102,3 +124,16 @@ body {
     align-content: center;
     margin: 10px;
 }
+
+.list{
+    display: flex;
+}
+
+.distance-align {
+    text-align: center;
+}
+
+.details {
+    margin: 0 auto;
+}
+
