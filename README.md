@@ -18,6 +18,8 @@ Check it out live here: http://cithikes.com
 * Flexbox is used in much of the CSS and layout.
 
 ### Functionality
+* Plot all hikes returned by the hiking API on a map.
+* Have detailed 'show' page of an app which populates with data returned by the hiking API.
 * Two models, for hikes and for users.
 * A subdocument for comments is embedded into the hike model.
 * Full CRUD functionaltiy distributed over both models.
