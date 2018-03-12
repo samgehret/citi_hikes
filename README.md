@@ -9,7 +9,7 @@ Check it out live here: http://cithikes.com
 
 ### Technologies Used
 * For maps, Mapbox is used.
-* Hiking data is returned using the Hiking Project Data API
+* Hiking data is returned using the (https://www.hikingproject.com/data, Hiking Project Data API)
 * This app uses the MEHN stack. MongoDB, Express, HandleBars, and Node.js.
 * For authentication, Passport and BCyrpt are used.
 * Materialize is used for some basic formatting (nav bar, forms, and buttons)
