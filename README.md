@@ -6,6 +6,8 @@ Check it out live here: http://cithikes.com
 
 ## Basic Concept
 * Use a RESTful API to return hiking data and display it creatively on a Mapbox Map.
+* Implement full CRUD functionality using RESTful routes.
+* Implement an authentication strategy.
 
 ### Technologies Used
 * For maps, Mapbox is used.
