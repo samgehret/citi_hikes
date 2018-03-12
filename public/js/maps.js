@@ -93,7 +93,7 @@ function printRoutes (response) {
 
       new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(`<p>${trail.name}</p><p>Length: ${trail.length}</p><p>Ascent: ${trail.ascent} ft</p><p><a href = '/hikes/${trail.id}'>Detailed Information</a></p>`)
+          .setHTML(`<p>${trail.name}</p><p>Hike Length: ${trail.length} miles</p><p>Ascent: ${trail.ascent} ft</p><p><a href = '/hikes/${trail.id}'>Detailed Information</a></p>`)
           .addTo(map)
     })
 
