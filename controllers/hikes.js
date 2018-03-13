@@ -85,12 +85,18 @@ router.get('/:id', (req, res) => {
                 return res.json()
               })
               .then((res) => {
-                console.log('success!', res)
+                console.log(res.trails[0].id)
+                Hike.create({
+                  'hiker': res.trails[0].id,
+                  'hikeNum': res.trails[0].id,
+                  'hikeComments': []
+                })
               })
               .catch((err) => {
                 console.log('something went wrong...', err)
               })
           } else {
+            console.log('hike found')
           // this sorts the comments by most recent
             var sortedComments = hike.hikeComments
             sortedComments.sort(function (a, b) {
