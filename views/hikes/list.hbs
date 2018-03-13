@@ -6,7 +6,16 @@
 {{/if}} --}}
 
 <div class = 'listlayout'>
-        <div id = 'mapall'></div>
+        <div>
+                <button  id = "postbtn" class="removelayer waves-effect waves-light btn">Remove Map Layers</button>
+        </div>
+        <div class = 'mapcontainer'>
+                <div id = 'mapall'></div>
+                <div class = 'map-filter'>
+                        <p>Hike Filter</p>
+                </div>
+        </div>
         <div class = 'hikecontainer'></div>
+        
 </div>
 <script type="text/javascript" src="../js/maps.js"></script>

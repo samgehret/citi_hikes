@@ -7,6 +7,17 @@ var trailResponse = ''
 // The default method of fetch is a GET request
 // For now all we have to pass fetch is the url
 
+document.querySelector('.removelayer').addEventListener('click', removeMyLayers)
+
+function removeMyLayers () {
+  var layers = map.getStyle().layers
+  var myLayers = layers.filter(layer => layer.metadata === 'custom')
+  console.log(myLayers)
+  for (let layer of myLayers) {
+    map.removeLayer(layer.id)
+  }
+}
+
 function doSomething (response) {
   for (let trail of response.trails) {
     // console.log(trail.name)
@@ -60,6 +71,7 @@ function printRoutes (response) {
       map.addLayer({
         'id': trail.name,
         'type': 'symbol',
+        'metadata': 'custom',
         'source': {
           'type': 'geojson',
           'data': {
