@@ -23,6 +23,7 @@ function populateHike (response) {
   document.querySelector('.difficulty').innerHTML = response.trails[0].difficulty
   document.querySelector('.status').innerHTML = response.trails[0].conditionStatus
   document.querySelector('.statusdetails').innerHTML = response.trails[0].conditionDetails
+  document.querySelector('.summarydetails').innerHTML = response.trails[0].summary
   document.querySelector('.ascent').innerHTML = response.trails[0].ascent
   lat = response.trails[0].latitude
   lat = response.trails[0].latitude
