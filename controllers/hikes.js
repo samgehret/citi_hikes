@@ -68,6 +68,7 @@ router.post('/:id', (req, res) => {
         dateComment: Date.now()
       })
       hike.save()
+      console.log('the id is' + req.params.id)
       res.redirect('/hikes/' + req.params.id)
     })
 })
@@ -81,29 +82,32 @@ router.get('/:id', (req, res) => {
         .then(hike => {
           if (hike === null) {
             fetch(`https://www.hikingproject.com/data/get-trails-by-id?ids=${req.params.id}&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`)
-              .then((res) => {
-                return res.json()
+              .then((response) => {
+                return response.json()
               })
-              .then((res) => {
-                console.log(res.trails[0].id)
+              .then((response) => {
+                // console.log(res.trails[0].id)
                 Hike.create({
-                  'hiker': res.trails[0].id,
-                  'hikeNum': res.trails[0].id,
+                  'hiker': response.trails[0].id,
+                  'hikeNum': response.trails[0].id,
                   'hikeComments': []
                 })
+                res.render('hikes/show', {hikeID})
               })
               .catch((err) => {
                 console.log('something went wrong...', err)
               })
           } else {
-            console.log('hike found')
+            // console.log('hike found')
           // this sorts the comments by most recent
             var sortedComments = hike.hikeComments
             sortedComments.sort(function (a, b) {
               return b.dateComment - a.dateComment
             })
+            res.render('hikes/show', {hikeID, hike})
           }
-          res.render('hikes/show', {hikeID, hike})
+          // console.log('got here')
+          // res.render('hikes/show', {hikeID, hike})
         })
 
   // res.render('hikes/show', {hikeID, sortedComments})
