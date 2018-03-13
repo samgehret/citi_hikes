@@ -7,7 +7,7 @@ const CommentsSchema = new mongoose.Schema({
 })
 
 const HikesSchema = new mongoose.Schema({
-  hikeID: String,
+  hiker: String,
   hikeNum: Number,
   hikeComments: [CommentsSchema]
 })

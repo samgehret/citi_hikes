@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const fetch = require('node-fetch')
 
 const Hike = require('../models/Hikes')
 var hikeID = ''
+
+var url = `https://www.hikingproject.com/data/get-trails-by-id?ids=${hikeID}&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
 
 router.get('/', (req, res) => {
   Hike.find({})
@@ -65,6 +68,7 @@ router.post('/:id', (req, res) => {
         dateComment: Date.now()
       })
       hike.save()
+      console.log('the id is' + req.params.id)
       res.redirect('/hikes/' + req.params.id)
     })
 })
@@ -76,13 +80,36 @@ router.get('/:id', (req, res) => {
   hikeID = req.params.id
   Hike.findOne({ 'hiker': `${req.params.id}`})
         .then(hike => {
+          if (hike === null) {
+            fetch(`https://www.hikingproject.com/data/get-trails-by-id?ids=${req.params.id}&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`)
+              .then((response) => {
+                return response.json()
+              })
+              .then((response) => {
+                // console.log(res.trails[0].id)
+                Hike.create({
+                  'hiker': response.trails[0].id,
+                  'hikeNum': response.trails[0].id,
+                  'hikeComments': []
+                })
+                res.render('hikes/show', {hikeID})
+              })
+              .catch((err) => {
+                console.log('something went wrong...', err)
+              })
+          } else {
+            // console.log('hike found')
           // this sorts the comments by most recent
-          var sortedComments = hike.hikeComments
-          sortedComments.sort(function (a, b) {
-            return b.dateComment - a.dateComment
-          })
-          res.render('hikes/show', {hikeID, hike})
+            var sortedComments = hike.hikeComments
+            sortedComments.sort(function (a, b) {
+              return b.dateComment - a.dateComment
+            })
+            res.render('hikes/show', {hikeID, hike})
+          }
+          // console.log('got here')
+          // res.render('hikes/show', {hikeID, hike})
         })
+
   // res.render('hikes/show', {hikeID, sortedComments})
 })
 

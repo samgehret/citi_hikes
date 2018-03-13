@@ -135,5 +135,6 @@ body {
 
 .details {
     margin: 0 auto;
+    display: flex;
 }
 

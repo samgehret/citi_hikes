@@ -36,14 +36,22 @@
             <div id="map" style="width:40%;height:300px;min-width:300px"></div>
         </div>
         <div class = 'details list stats'>
-            <div class = 'center-align'>Details:&nbsp<div class = 'statusdetails'></div></div>
+            
+                Summary:&nbsp
+                <div class = 'summarydetails'></div>
+        
         </div>
+        <div class = 'details list stats'>
+                Condition:&nbsp
+                <div class = 'statusdetails'></div>       
+        </div>
+        
     </div>
 
 
 {{#if currentUser}}
 <div class = 'userforms'>
-<form action = "/hikes/{{hike.hikeNum}}" method = "POST">
+<form action = "/hikes/{{hikeID}}" method = "POST">
 <p>
     <label for="hikeComment">Comment</label>
     <textarea name="hikeComment" cols="40" rows="5" required></textarea>
