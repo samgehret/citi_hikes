@@ -74,15 +74,16 @@ router.post('/:id', (req, res) => {
 // your own hike.
 router.get('/:id', (req, res) => {
   hikeID = req.params.id
-  Hike.findOne({ 'hiker': `${req.params.id}`})
-        .then(hike => {
-          // this sorts the comments by most recent
-          var sortedComments = hike.hikeComments
-          sortedComments.sort(function (a, b) {
-            return b.dateComment - a.dateComment
-          })
-          res.render('hikes/show', {hikeID, hike})
-        })
+  // Hike.findOne({ 'hiker': `${req.params.id}`})
+  //       .then(hike => {
+  //         // this sorts the comments by most recent
+  //         var sortedComments = hike.hikeComments
+  //         sortedComments.sort(function (a, b) {
+  //           return b.dateComment - a.dateComment
+  //         })
+  // res.render('hikes/show', {hikeID, hike})
+  res.render('hikes/show', {hikeID})
+
   // res.render('hikes/show', {hikeID, sortedComments})
 })
 

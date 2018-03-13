@@ -1,5 +1,5 @@
 
-const url = 'https://www.hikingproject.com/data/get-trails?lat=38.89&lon=-77.15&maxDistance=150&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1'
+const url = 'https://www.hikingproject.com/data/get-trails?lat=38.89&lon=-77.15&maxDistance=150&maxResults=100&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1'
 var trailResponse = ''
 // const url ='https://pokeapi.co/api/v2/pokemon/7'
 // fetch takes a url, and an object with a few optional parameters.

@@ -26,6 +26,12 @@ Check it out live here: http://cithikes.com
 * Admin level role permissions for users, as well as restricted pages for admin users only.
 * Configuration parameters in place for deployment to Heroku, with an MLAB Mongo DB.
 
+## To Do
+* On the map with all hikes, be able to filter hikes based on hike criteria (distance, difficulty, elevation).
+* Allow user to specify locations other than Washington DC, and distance to return a list of hikes.
+* Allow an authenticated user to pin or favorite hikes so they come up on their profile page.
+* Rewrite using React framework in resuable components
+
 ## Installation instructions
 * Clone down this repo
 * run "npm install" to include all the dependencies.
