@@ -8,16 +8,16 @@
 <div class = 'listlayout'>
         <div class = 'mapcontainer'>
                 <div id = 'mapall'></div>
-                <div class = 'map-filter input-field col s12'>
+                <div class = 'map-filter'>
                         <p>Choose Hike Criteria:</p>
                           <div class="input-field col s12">
-                                <select id ='difficulty'>
+                                <select id ='difficulty' multiple>
                                         <option value="" disabled selected>Difficulty</option>
-                                        <option value="green">Easiest</option>
-                                        <option value="greenBlue">Easy</option>
-                                        <option value="blue">Medium</option>
-                                        <option value="blueBlack">Hard</option>
-                                        <option value="black">Hardest</option>
+                                        <option value="green" selected>Easiest</option>
+                                        <option value="greenBlue" selected>Easy</option>
+                                        <option value="blue" selected>Medium</option>
+                                        <option value="blueBlack" selected>Hard</option>
+                                        <option value="black" selected>Hardest</option>
                                 </select>
                                 <p>Elevation Gain:</p>
                                 <div id="test-slider" class="input-field"></div>

@@ -21,13 +21,6 @@ $(document).ready(function () {
   var allTrails = []
   var index = 0
   var uID = ''
-  var filterDifficulty = document.getElementById('difficulty')
-
-// const url ='https://pokeapi.co/api/v2/pokemon/7'
-// fetch takes a url, and an object with a few optional parameters.
-// Ex: {method: 'POST', headers: {'Content-Type': 'application/json'}}
-// The default method of fetch is a GET request
-// For now all we have to pass fetch is the url
 
   document.getElementById('filter-button').addEventListener('click', updateMap)
 
@@ -38,8 +31,11 @@ $(document).ready(function () {
       map.removeLayer(layer.id)
     }
   // var newArray = allTrails
+    var filterDifficulty = $('#difficulty').val()
     var elevationGain = slider.noUiSlider.get()
-    var filteredResults = allTrails.filter(trails => trails.difficulty === filterDifficulty.value && trails.ascent < elevationGain[1] && trails.ascent > elevationGain[0])
+    var filteredResults = allTrails.filter((trails) => {
+      return filterDifficulty.includes(trails.difficulty) && trails.ascent < elevationGain[1] && trails.ascent > elevationGain[0]
+    })
     printRoutes(filteredResults)
   }
 
