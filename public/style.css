@@ -155,6 +155,9 @@ body {
     flex-direction: column;
 }
 
-#test-slider{
+#elevation-slider{
+    margin:10px;
+}
+#distance-slider{
     margin:10px;
 }

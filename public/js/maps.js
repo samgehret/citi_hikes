@@ -1,7 +1,8 @@
 $(document).ready(function () {
   $('select').material_select()
-  var slider = document.getElementById('test-slider')
-  noUiSlider.create(slider, {
+  var elevationSlider = document.getElementById('elevation-slider')
+  var distanceSlider = document.getElementById('distance-slider')
+  noUiSlider.create(elevationSlider, {
     start: [0, 6200],
     connect: true,
     step: 100,
@@ -15,12 +16,32 @@ $(document).ready(function () {
       decimals: 0
     })
   })
+  noUiSlider.create(distanceSlider, {
+    start: [0, 6200],
+    connect: true,
+    step: .5,
+    tooltips: true,
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+      'min': 0,
+      'max': 30
+    },
+    format: wNumb({
+      decimals: 0
+    })
+  })
 
   const url = 'https://www.hikingproject.com/data/get-trails?lat=38.89&lon=-77.15&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1'
   var trailResponse = ''
   var allTrails = []
   var index = 0
   var uID = ''
+
+// const url ='https://pokeapi.co/api/v2/pokemon/7'
+// fetch takes a url, and an object with a few optional parameters.
+// Ex: {method: 'POST', headers: {'Content-Type': 'application/json'}}
+// The default method of fetch is a GET request
+// For now all we have to pass fetch is the url
 
   document.getElementById('filter-button').addEventListener('click', updateMap)
 
@@ -32,9 +53,10 @@ $(document).ready(function () {
     }
   // var newArray = allTrails
     var filterDifficulty = $('#difficulty').val()
-    var elevationGain = slider.noUiSlider.get()
+    var elevationGain = elevationSlider.noUiSlider.get()
+    var hikeDistance = distanceSlider.noUiSlider.get()
     var filteredResults = allTrails.filter((trails) => {
-      return filterDifficulty.includes(trails.difficulty) && trails.ascent < elevationGain[1] && trails.ascent > elevationGain[0]
+      return filterDifficulty.includes(trails.difficulty) && trails.ascent < elevationGain[1] && trails.ascent > elevationGain[0] && trails.length < hikeDistance[1] && trails.length > hikeDistance[0]
     })
     printRoutes(filteredResults)
   }
