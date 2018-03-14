@@ -8,7 +8,7 @@
 <div class = 'listlayout'>
         <div class = 'mapcontainer'>
                 <div id = 'mapall'></div>
-                <div class = 'map-filter'>
+                <div class = 'map-filter input-field col s12'>
                         <p>Choose Hike Criteria:</p>
                           <div class="input-field col s12">
                                 <select id ='difficulty'>
@@ -19,7 +19,8 @@
                                         <option value="blueBlack">Hard</option>
                                         <option value="black">Hardest</option>
                                 </select>
-                                <div id="test-slider"></div>
+                                <p>Elevation Gain:</p>
+                                <div id="test-slider" class="input-field"></div>
                                 <button id = 'filter-button' class="removelayer waves-effect waves-light btn">Update Hikes</button>
                         </div>
                         
@@ -30,3 +31,4 @@
 </div>
 <script type="text/javascript" src="../js/maps.js"></script>
 <script src="../../nouislider.min.js"></script>
+<script src="../../wNumb.js"></script>
