@@ -1,4 +1,4 @@
-<h1 class = 'center-align'>All Hikes</h1>
+<h2 class = 'center-align'>Find the hike that's right for you</h2>
 
 {{!-- Only a logged in user can post a hike --}}
 {{!-- {{#if currentUser}}
@@ -6,21 +6,21 @@
 {{/if}} --}}
 
 <div class = 'listlayout'>
-        <div>
-                <button  id = "postbtn" class="removelayer waves-effect waves-light btn">Remove Map Layers</button>
-        </div>
         <div class = 'mapcontainer'>
                 <div id = 'mapall'></div>
                 <div class = 'map-filter'>
-                        
+                        <p>Choose Hike Criteria:</p>
                           <div class="input-field col s12">
-                                <select>
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <select id ='difficulty'>
+                                        <option value="" disabled selected>Difficulty</option>
+                                        <option value="green">Easiest</option>
+                                        <option value="greenBlue">Easy</option>
+                                        <option value="blue">Medium</option>
+                                        <option value="blueBlack">Hard</option>
+                                        <option value="black">Hardest</option>
                                 </select>
-                                <label>Select Difficulty</label>
+                                <div id="test-slider"></div>
+                                <button id = 'filter-button' class="removelayer waves-effect waves-light btn">Update Hikes</button>
                         </div>
                         
                 </div>
@@ -29,3 +29,4 @@
         
 </div>
 <script type="text/javascript" src="../js/maps.js"></script>
+<script src="../../nouislider.min.js"></script>
