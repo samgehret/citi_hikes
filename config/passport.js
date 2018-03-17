@@ -31,6 +31,7 @@ module.exports = function (passport) {
          newUser.local.email = email
          newUser.local.password = newUser.encrypt(password)
          newUser.isAdmin = false
+         newUser.favoriteHikes = []
          // by default I set isAdmin to false. User can only become admin
          // with direct DB access to modify the property manually
 

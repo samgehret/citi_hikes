@@ -1,4 +1,4 @@
-<h1 class = 'center-align'>All Hikes</h1>
+<h2 class = 'center-align'>Find the hike that's right for you</h2>
 
 {{!-- Only a logged in user can post a hike --}}
 {{!-- {{#if currentUser}}
@@ -6,7 +6,31 @@
 {{/if}} --}}
 
 <div class = 'listlayout'>
-        <div id = 'mapall'></div>
+        <div class = 'mapcontainer'>
+                <div id = 'mapall'></div>
+                <div class = 'map-filter'>
+                        <p>Choose Hike Criteria:</p>
+                          <div class="input-field col s12">
+                                <select id ='difficulty' multiple>
+                                        <option value="" disabled selected>Difficulty</option>
+                                        <option value="green" selected>Easiest</option>
+                                        <option value="greenBlue" selected>Easy</option>
+                                        <option value="blue" selected>Medium</option>
+                                        <option value="blueBlack" selected>Hard</option>
+                                        <option value="black" selected>Hardest</option>
+                                </select>
+                                <p>Elevation Gain (ft):</p>
+                                <div id="elevation-slider" class="input-field"></div>
+                                <p>Hike Distance (mi):</p>
+                                <div id="distance-slider" class="input-field"></div>
+                                <button id = 'filter-button' class="removelayer waves-effect waves-light btn">Update Hikes</button>
+                        </div>
+                        
+                </div>
+        </div>
         <div class = 'hikecontainer'></div>
+        
 </div>
 <script type="text/javascript" src="../js/maps.js"></script>
+<script src="../../nouislider.min.js"></script>
+<script src="../../wNumb.js"></script>

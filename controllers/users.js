@@ -50,13 +50,27 @@ router.get('/logout', (req, res) => {
   res.redirect('/hikes')
 })
 
+// will edit this to return favorite hikes instead of POSTed hikes
 router.get('/:id', (req, res) => {
   User.findOne({_id: req.params.id})
     .then(user => {
-      Hike.find({authorID: req.params.id})
-        .then(hikes => {
-          res.render('users/profile', {user, hikes})
-        })
+      res.render('users/profile', {user})
+    })
+})
+
+// Push a favorite hike to array
+router.post('/:id', (req, res) => {
+  console.log('hello')
+  User.findOne({_id: req.user.id})
+    .then(user => {
+      console.log(user)
+      user.favoriteHikes.push({
+        hikeID: req.body.hikeid,
+        hikeTitle: req.body.hikeTitle
+      })
+      user.save()
+      console.log('the id is' + req.body.hikeid)
+      res.redirect('/hikes/' + req.body.hikeid)
     })
 })
 

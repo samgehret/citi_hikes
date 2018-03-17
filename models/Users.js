@@ -1,13 +1,19 @@
 var mongoose = require('../db/connection')
 var bcrypt = require('bcrypt-nodejs')
 
+const favoriteHikesSchema = new mongoose.Schema({
+  hikeID: String,
+  hikeTitle: String
+})
+
 // Created isAdmin property to differentiate admin level users
 var User = mongoose.Schema({
   local: {
     email: String,
     password: String
   },
-  isAdmin: Boolean
+  isAdmin: Boolean,
+  favoriteHikes: [favoriteHikesSchema]
 })
 
 User.methods.encrypt = function (password) {

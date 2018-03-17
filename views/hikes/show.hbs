@@ -7,7 +7,14 @@
     <input class = 'waves-effect waves-light btn red' type="submit" value="Delete">
     </form>
     {{/if}}
-    
+
+    {{!-- {{#if currentUser}}
+    <form action="/users/{{currentUser.id}}" method="POST">
+      <input type="checkbox" class="filled-in" id="filled-in-box" name = "hikeid" checked="checked" value = {{[hike.hikeNum, hike.hikeTitle]}} />
+      <label for="filled-in-box">Favorite this hike</label>
+      <input class = 'waves-effect waves-light btn green' type="submit" value="Update">
+    </form>
+    {{/if}} --}}
 
 </div>
 
@@ -36,13 +43,9 @@
             <div id="map" style="width:40%;height:300px;min-width:300px"></div>
         </div>
         <div class = 'details list stats'>
-            
-                Summary:&nbsp
                 <div class = 'summarydetails'></div>
-        
         </div>
         <div class = 'details list stats'>
-                Condition:&nbsp
                 <div class = 'statusdetails'></div>       
         </div>
         
