@@ -1,3 +1,10 @@
+// var othermap = './maps.js'
+// console.log(othermap)
+console.log(localStorage.getItem('globalCoordinates'))
+
+var coordinates = localStorage.getItem('globalCoordinates').split(',')
+console.log('under here is coordintes')
+console.log(coordinates)
 var hikeID = document.querySelector('.title').innerHTML
 console.log(hikeID)
 
@@ -41,10 +48,10 @@ function getRoute () {
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
-    center: [((-77.01 + long) / 2), ((38.89 + lat) / 2)],
-    zoom: 7
+    center: [((Number(coordinates[0]) + long) / 2), ((Number(coordinates[1]) + lat) / 2)],
+    zoom: 6
   })
-  var start = [-77.01, 38.89]
+  var start = [Number(coordinates[0]), Number(coordinates[1])]
   var end = [long, lat]
   var directionsRequest = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + 'pk.eyJ1Ijoic2FtZ2VocmV0IiwiYSI6ImNqZWExcDdwNTAxYnEyeG1tZnQ4MTNsODkifQ.68r_UjBeRkubf5eUs4uw-g'
   $.ajax({

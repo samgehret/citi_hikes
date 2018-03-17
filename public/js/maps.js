@@ -1,3 +1,6 @@
+// var globalCoordinates = {
+//   coordinates: 0
+// }
 $(document).ready(function () {
   $('select').material_select()
   var elevationSlider = document.getElementById('elevation-slider')
@@ -101,6 +104,7 @@ $(document).ready(function () {
   })
 
   function getRoute (coordinates) {
+    localStorage.setItem('globalCoordinates', coordinates)
     var layers = map.getStyle().layers
     var myLayers = layers.filter(layer => layer.metadata === 'custom')
     for (let layer of myLayers) {
@@ -113,8 +117,6 @@ $(document).ready(function () {
     //   zoom: 7
     // })
     map.flyTo({center: coordinates, zoom: 6})
-    console.log(map)
-    console.log('coordinates are' + coordinates)
     var long = coordinates[0]
     var lat = coordinates[1]
     var url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}{&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
@@ -183,8 +185,7 @@ $(document).ready(function () {
           .addTo(map)
         })
       })
-
-    // this is where the code from the next step will go
     }
   }
+  // module.exports = globalCoordinates
 })
