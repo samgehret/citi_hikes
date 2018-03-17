@@ -19,7 +19,7 @@ $(document).ready(function () {
   noUiSlider.create(distanceSlider, {
     start: [0, 6200],
     connect: true,
-    step: .5,
+    step: 0.5,
     tooltips: true,
     orientation: 'horizontal', // 'horizontal' or 'vertical'
     range: {
@@ -31,8 +31,6 @@ $(document).ready(function () {
     })
   })
 
-  const url = 'https://www.hikingproject.com/data/get-trails?lat=38.89&lon=-77.15&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1'
-  var trailResponse = ''
   var allTrails = []
   var index = 0
   var uID = ''
@@ -81,19 +79,51 @@ $(document).ready(function () {
   var map = new mapboxgl.Map({
     container: 'mapall',
     style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-77.01, 38.89],
-    zoom: 6
+    center: [-98.29, 41.90],
+    zoom: 3
   })
   map.on('load', function () {
-    getRoute()
+    // getRoute()
   })
 
-  function getRoute () {
+  document.getElementById('searchlocation').addEventListener('click', () => {
+    console.log('searching location')
+    var input = document.getElementById('locationvalue')
+    console.log(input.value)
+    var url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${input.value}.json?access_token=pk.eyJ1Ijoic2FtZ2VocmV0IiwiYSI6ImNqZWExcDdwNTAxYnEyeG1tZnQ4MTNsODkifQ.68r_UjBeRkubf5eUs4uw-g&country=us&types=postcode`
+    fetch(url)
+      .then((res) => {
+        return res.json()
+      }).then((res) => {
+        console.log(res.features[0].geometry.coordinates)
+        getRoute(res.features[0].geometry.coordinates)
+      })
+  })
+
+  function getRoute (coordinates) {
+    var layers = map.getStyle().layers
+    var myLayers = layers.filter(layer => layer.metadata === 'custom')
+    for (let layer of myLayers) {
+      map.removeLayer(layer.id)
+    }
+    // var map = new mapboxgl.Map({
+    //   container: 'mapall',
+    //   style: 'mapbox://styles/mapbox/streets-v10',
+    //   center: coordinates,
+    //   zoom: 7
+    // })
+    map.flyTo({center: coordinates, zoom: 6})
+    console.log(map)
+    console.log('coordinates are' + coordinates)
+    var long = coordinates[0]
+    var lat = coordinates[1]
+    var url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}{&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
     fetch(url)
     .then((res) => {
       return res.json()
     })
     .then((res) => {
+      console.log('getting trails')
       allTrails = res.trails
       // doSomething(res)
       console.log(allTrails)
@@ -106,6 +136,7 @@ $(document).ready(function () {
 
   function printRoutes (response) {
     for (let trail of response) {
+      console.log('adding icons to map')
       map.loadImage('../img/hikingicon.png', function (error, image) {
         index++
         uID = trail.name + index
