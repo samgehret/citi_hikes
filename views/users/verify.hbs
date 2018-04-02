@@ -1,0 +1,11 @@
+<h3 class = 'center-align'>Verify User</h3>
+<p>Your ID is {{this.id}}</p>
+
+
+<div class = 'userforms'>
+<form method="post" action='/users/{{this.id}}/verify'>
+<div class="form-group">
+    <label for="fullName">Verification Code</label>
+    <input class="form-control" type="text" name="code" id="code">
+    <input class="btn btn-default" type="submit">
+  </div>

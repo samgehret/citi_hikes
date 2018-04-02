@@ -18,7 +18,7 @@ exports.create = function (request, response) {
     fullName: params.fullName,
     email: params.email,
     phone: params.phone,
-    countryCode: params.countryCode,
+    countryCode: '1',
     password: params.password
   })
 
