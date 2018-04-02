@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-const config = require('../config')
+const config = require('../config/config')
 
 // Create authenticated Authy and Twilio API clients
 const authy = require('authy')(config.authyKey)
