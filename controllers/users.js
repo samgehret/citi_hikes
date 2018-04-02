@@ -9,6 +9,14 @@ exports.showCreate = function (request, response) {
   })
 }
 
+exports.showLogin = function (request, response) {
+  response.render('users/login', {
+    title: 'Login',
+          // include any errors (success messages not possible for view)
+    errors: request.flash('errors')
+  })
+}
+
 // create a new user based on the form submission
 exports.create = function (request, response) {
   const params = request.body

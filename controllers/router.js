@@ -13,4 +13,5 @@ module.exports = function (app) {
   app.post('/users/:id/verify', users.verify)
   app.post('/users/:id/resend', users.resend)
   app.get('/users/:id', users.showUser)
+  app.get('/users/login', users.showLogin)
 }
