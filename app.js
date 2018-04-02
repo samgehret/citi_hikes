@@ -37,6 +37,10 @@ app.get('/', (req, res) => {
 
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
 app.use(flash())
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.session.userId
+  next()
+})
 require('./controllers/router')(app)
 
 app.use('/hikes', hikesController)

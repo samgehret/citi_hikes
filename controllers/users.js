@@ -21,30 +21,35 @@ exports.showLogin = function (request, response) {
 exports.login = function (request, response) {
   User.findOne({email: request.body.email}, function (err, user) {
     if (err || !user) {
-      console.log('no user found')
+      response.render('users/login', {
+        message: 'No user found'
+      })
     } else {
-      console.log('user found!!!')
-      console.log(user)
       bcrypt.compare(request.body.password, user.password, function (err, res) {
-        console.log('trying bcrypt')
-        console.log(request.body.password)
-        console.log(user.password)
         if (res) {
          // Passwords match
-          console.log('passwords match')
           request.session.userId = user._id
-          console.log(request.session)
-          response.render('hikes/list')
+          response.redirect('/hikes')
         } else if (err) {
          // Passwords don't match
-          console.log(err)
-          console.log('password do not match')
+          response.render('users/login', {
+            message: 'Password is wrong'
+          })
         } else {
-          console.log('somehting unexpected')
+          response.render('users/login', {
+            message: 'Invalid Password'
+          })
         }
       })
     }
   })
+}
+
+exports.logout = function (request, response) {
+  console.log('logging out...')
+  response.redirect('/hikes')
+  request.session.destroy()
+  console.log(request.session)
 }
 
 // create a new user based on the form submission

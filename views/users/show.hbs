@@ -1,3 +1,8 @@
 <h1 class = 'commentscontainer'>{{user.fullName}}'s Profile</h1>
 
 <h1 class = 'commentscontainer'>Verified: {{user.verified}}</h1>
+
+ <form method="post" action="/users/{{currentUser}}/resend">
+    <input type="submit" name="Verify Account" />
+</form>
+        
