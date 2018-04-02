@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const bcrypt = require('bcrypt')
 
 // Display a form that allows users to sign up for a new account
 exports.showCreate = function (request, response) {
@@ -14,6 +15,35 @@ exports.showLogin = function (request, response) {
     title: 'Login',
           // include any errors (success messages not possible for view)
     errors: request.flash('errors')
+  })
+}
+
+exports.login = function (request, response) {
+  User.findOne({email: request.body.email}, function (err, user) {
+    if (err || !user) {
+      console.log('no user found')
+    } else {
+      console.log('user found!!!')
+      console.log(user)
+      bcrypt.compare(request.body.password, user.password, function (err, res) {
+        console.log('trying bcrypt')
+        console.log(request.body.password)
+        console.log(user.password)
+        if (res) {
+         // Passwords match
+          console.log('passwords match')
+          request.session.userId = user._id
+          console.log(request.session)
+          response.render('hikes/list')
+        } else if (err) {
+         // Passwords don't match
+          console.log(err)
+          console.log('password do not match')
+        } else {
+          console.log('somehting unexpected')
+        }
+      })
+    }
   })
 }
 

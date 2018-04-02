@@ -8,6 +8,7 @@ var hikeID = ''
 var url = `https://www.hikingproject.com/data/get-trails-by-id?ids=${hikeID}&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
 
 router.get('/', (req, res) => {
+  console.log(req.session)
   Hike.find({})
         .then(hikes => {
           res.render('hikes/list')
