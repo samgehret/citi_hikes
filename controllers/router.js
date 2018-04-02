@@ -1,10 +1,10 @@
-// const home = require('./home')
+const home = require('./home')
 const users = require('./users')
 
 // Map routes to controller functions
 module.exports = function (app) {
     // Render home page
-//   app.get('/', home.show)
+  app.get('/', home.show)
 
     // Routes for account creation
   app.get('/users/new', users.showCreate)

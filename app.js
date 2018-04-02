@@ -19,7 +19,7 @@ app.use(bodyParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
 app.use(methodOverride('_method'))
-app.set('view engine', 'hbs')
+app.set('view engine', 'jade')
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(session({
