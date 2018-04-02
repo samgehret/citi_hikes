@@ -25,8 +25,8 @@
             <li>CITI-HIKES</li>
           </ul>
           <ul class = 'right'>
-                {{#if currentUser}}
-                  <li><a href="/users/{{currentUser.id}}">My Profile Page</a></li>
+                {{#if session.id}}
+                  <li><a href="/users/{{session.userId}}">My Profile Page</a></li>
                   <li><a href="/users/logout">Logout</a></li>
                 {{else}}
                   <li><a href="/users/login">Login</a></li>
