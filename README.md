@@ -10,7 +10,7 @@ Check it out live here: http://cithikes.com
 * Implement an authentication strategy.
 
 ### Technologies Used
-* For maps, Mapbox is used.
+* For maps, Mapbox is used. Some of the Mapbox code is adapter from various tutorials.
 * Hiking data is returned using the  [Hiking Project Data API](https://www.hikingproject.com/data) 
 * This app uses the MEHN stack. MongoDB, Express, HandleBars, and Node.js.
 * For authentication, Passport and BCyrpt are used.
@@ -27,8 +27,9 @@ Check it out live here: http://cithikes.com
 * Configuration parameters in place for deployment to Heroku, with an MLAB Mongo DB.
 
 ## To Do
-* Allow user to specify locations other than Washington DC, and distance to return a list of hikes.
 * Allow an authenticated user to pin or favorite hikes so they come up on their profile page.
+* Add more robust authentication using Twilio
+* Improve performance of Mapbox layering
 * Rewrite using React framework in resuable components
 
 ## Installation instructions
