@@ -10,7 +10,7 @@ Check it out live here: http://cithikes.com
 * Implement an authentication strategy.
 
 ### Technologies Used
-* For maps, Mapbox is used. Some of the Mapbox code is adapter from various tutorials.
+* For maps, Mapbox is used. Some of the Mapbox code is adapted from various tutorials.
 * Hiking data is returned using the  [Hiking Project Data API](https://www.hikingproject.com/data) 
 * This app uses the MEHN stack. MongoDB, Express, HandleBars, and Node.js.
 * For authentication, Passport and BCyrpt are used.
