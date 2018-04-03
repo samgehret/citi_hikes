@@ -1,5 +1,7 @@
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
+const config = require('../config/config')
+const twilioClient = require('twilio')(config.accountSid, config.authToken)
 
 // Display a form that allows users to sign up for a new account
 exports.showCreate = function (request, response) {
@@ -203,5 +205,13 @@ exports.showUser = function (request, response, next) {
             // any success messages
       successes: request.flash('successes')
     })
+  })
+}
+
+exports.sendMessage = function (request, response) {
+  twilioClient.messages.create({
+    to: '+19086016058',
+    from: config.twilioNumber,
+    body: 'Sup Cutie'
   })
 }

@@ -3,6 +3,9 @@
 <h1 class = 'commentscontainer'>Verified: {{user.verified}}</h1>
 
  <form method="post" action="/users/{{currentUser}}/resend">
-    <input type="submit" name="Verify Account" />
+    <button class="waves-effect waves-light btn-large" type="submit">Vefify Account</button>
 </form>
-        
+
+ <form method="post" action="/users/{{currentUser}}/message">
+    <button class = 'waves-effect waves-light btn-large' type="submit">Meow</button>
+</form>
