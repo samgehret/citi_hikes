@@ -1,5 +1,11 @@
 body {
     background: white;
+    display:flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
 }
 
 .userforms {
@@ -165,4 +171,11 @@ body {
 }
 #distance-slider{
     margin:10px;
+}
+
+footer {
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: white;
 }
