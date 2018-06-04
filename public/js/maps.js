@@ -119,7 +119,7 @@ $(document).ready(function () {
     map.flyTo({center: coordinates, zoom: 6})
     var long = coordinates[0]
     var lat = coordinates[1]
-    var url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}{&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
+    var url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${long}&maxDistance=150&maxResults=200&key=200230209-ca9b0a0f9bb083f7f5ee4ddc59a95de1`
     fetch(url)
     .then((res) => {
       return res.json()
