@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type = "text/css" href="../../materialize/css/materialize.css">
-    <link rel="stylesheet" type = "text/css" href="../../style.css">
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-    <link href="../../nouislider.css" rel="stylesheet">
-    <title>Citi Hikes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../../materialize/css/materialize.css">
+  <link rel="stylesheet" type="text/css" href="../../style.css">
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+  <script>
+    !function () {
+      var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+      analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"]; analytics.factory = function (t) { return function () { var e = Array.prototype.slice.call(arguments); e.unshift(t); analytics.push(e); return analytics } }; for (var t = 0; t < analytics.methods.length; t++) { var e = analytics.methods[t]; analytics[e] = analytics.factory(e) } analytics.load = function (t, e) { var n = document.createElement("script"); n.type = "text/javascript"; n.async = !0; n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(n, a); analytics._loadOptions = e }; analytics.SNIPPET_VERSION = "4.1.0";
+        analytics.load("wZwpeEFas8K6xcKzCYlwEMiMcUOiXGar");
+        analytics.page();
+      }
+    }();
+  </script>
+  <link href="../../nouislider.css" rel="stylesheet">
+  <title>Citi Hikes</title>
 </head>
+
 <body>
-    <div class = 'navbar-fixed'>
-      <nav>
-        <div class = 'nav-wrapper green'>
-          <ul>
-                <li><a href="/hikes">All Hikes</a></li>
-          </ul>
-          <ul class = 'brand-logo center'>
-            <li>CITI-HIKES</li>
-          </ul>
-          <ul class = 'right'>
-                {{#if currentUser}}
-                  <li><a href="/users/{{currentUser.id}}">My Profile Page</a></li>
-                  <li><a href="/users/logout">Logout</a></li>
-                {{else}}
-                  <li><a href="/users/login">Login</a></li>
-                  <li><a href="/users/signup">Signup</a></li>
-                {{/if}}
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <main>
+  <div class='navbar-fixed'>
+    <nav>
+      <div class='nav-wrapper green'>
+        <ul>
+          <li><a href="/hikes">All Hikes</a></li>
+        </ul>
+        <ul class='brand-logo center'>
+          <li>CITI-HIKES</li>
+        </ul>
+        <ul class='right'>
+          {{#if currentUser}}
+          <li><a href="/users/{{currentUser.id}}">My Profile Page</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+          {{else}}
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/signup">Signup</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <main>
     {{{body}}}
-    </main>
-    <footer class = 'green'>
-      <p>© 2018 Sam Gehret</p>
-      <p>sam.gehret@gmail.com</p>
-      <p><a class = 'white-text'href = 'https://github.com/samgehret/citi_hikes'>Github Link</a></p>
-    </footer>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="../../materialize/js/materialize.min.js"></script>
-      <script src="../../nouislider.min.js"></script>
+  </main>
+  <footer class='green'>
+    <p>© 2018 Sam Gehret</p>
+    <p>sam.gehret@gmail.com</p>
+    <p><a class='white-text' href='https://github.com/samgehret/citi_hikes'>Github Link</a></p>
+  </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../../materialize/js/materialize.min.js"></script>
+  <script src="../../nouislider.min.js"></script>
 </body>
+
 </html>
