@@ -2,7 +2,7 @@
 
 Ever had a nice day on the weekend, wanted to go for a hike, but didn’t know where to hike or what to do? Citi Hikes is a full stack JavaScript application and hike  blog, focusing on day trip hikes from Washington, DC.
 
-Check it out live here: http://www.citihikes.com/
+Check it out live here: https://www.citihikes.com/
 
 ## Basic Concept
 * Use a RESTful API to return hiking data and display it creatively on a Mapbox Map.
